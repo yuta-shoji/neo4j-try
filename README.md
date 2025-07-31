@@ -1,6 +1,6 @@
 # Neo4j + Next.js 15 ユーザー関係性アプリ
 
-DenoとNext.js 15、Neo4jを使ったシンプルなユーザー関係性可視化アプリケーションです。
+DenoとNext.js 15、Neo4jを使ったシンプルなユーザー関係性可視化アプリケーション
 
 ## 🚀 特徴
 
@@ -47,20 +47,6 @@ docker-compose up -d
 docker-compose logs -f neo4j
 
 # Neo4jが起動完了するまで待機（約30秒〜1分）
-```
-
-**手動でDockerを起動する場合:**
-```bash
-docker run \
-  --name neo4j \
-  -p7474:7474 -p7687:7687 \
-  -d \
-  -v $HOME/neo4j/data:/data \
-  -v $HOME/neo4j/logs:/logs \
-  -v $HOME/neo4j/import:/var/lib/neo4j/import \
-  -v $HOME/neo4j/plugins:/plugins \
-  --env NEO4J_AUTH=neo4j/password \
-  neo4j:5.15-community
 ```
 
 ### 4. Neo4jブラウザで接続確認
@@ -240,10 +226,6 @@ deno task dev --port 3001
 - [ ] 認証機能
 - [ ] データエクスポート
 - [ ] Neo4j Browser連携
-
-## 🤝 貢献
-
-このプロジェクトはNext.jsとNeo4jの検証目的で作成されています。改善案やバグ報告は歓迎します。
 
 ## 📄 ライセンス
 
