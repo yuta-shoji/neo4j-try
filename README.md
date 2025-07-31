@@ -74,6 +74,50 @@ deno task dev
    - **ユーザー管理タブ**: ユーザーの作成と一覧表示
    - **関係性管理タブ**: ユーザー間の関係性の作成と表示
 
+## 🔗 Neo4j接続ツール
+
+### Neo4j Browser（Web版）
+DockerコンテナのNeo4jには、Webベースのブラウザが内蔵されています：
+
+```
+🌐 アクセス: http://localhost:7474
+
+認証情報:
+- Connect URL: bolt://localhost:7687
+- Username: neo4j
+- Password: password
+```
+
+**使用方法:**
+1. ブラウザで http://localhost:7474 にアクセス
+2. 接続情報を入力してログイン
+3. Cypherクエリを直接実行可能
+
+### Neo4j Desktop（デスクトップアプリ）
+より高機能なデスクトップアプリケーションとしても利用できます：
+
+**インストール手順:**
+1. [Neo4j公式サイト](https://neo4j.com/download/)からNeo4j Desktopをダウンロード
+2. macOS版をインストール（無料のアクティベーションキー必要）
+3. アプリケーションを起動
+
+**外部サーバー接続設定:**
+1. Neo4j Desktopを起動
+2. 左サイドバーの「Remote Connection」をクリック
+3. 「Connect to a remote server」を選択
+4. 接続情報を入力:
+   - **Name:** Docker Neo4j（任意の名前）
+   - **URL:** bolt://localhost:7687
+   - **Username:** neo4j
+   - **Password:** password
+5. 「Connect」をクリック
+
+**接続確認:**
+```cypher
+-- 簡単なテストクエリ
+MATCH (n) RETURN count(n) as nodeCount
+```
+
 ## 📁 プロジェクト構造
 
 ```
